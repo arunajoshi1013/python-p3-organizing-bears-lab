@@ -22,6 +22,15 @@ insert_file = open("lib/seed.sql")
 insert_as_string = insert_file.read()
 cursor.executescript(insert_as_string)
 
+
+select_all_female_bears_return_name_and_age = """
+    SELECT
+        bears.name,
+        bears.age
+    FROM bears
+    WHERE sex='F';
+"""
+
 class TestSelectAllFemaleBearsReturnNameAndAge:
     '''select_all_female_bears_return_name_and_age in sql_queries.py'''
 
